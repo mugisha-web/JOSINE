@@ -1,0 +1,7 @@
+{
+  "name": "IGIHOZO - Stock Management System",
+  "description": "A professional stock management and sales system with role-based access for Admins and Sellers, featuring real-time inventory tracking and PDF reporting.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
