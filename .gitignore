@@ -20,5 +20,9 @@ dist-ssr
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
+*.slnnode_modules
+dist
+.firebase
+.env
+
 *.sw?

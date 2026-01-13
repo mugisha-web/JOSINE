@@ -1,4 +1,5 @@
 
+// Fix: Use standard modular SDK imports from 'firebase/app' and 'firebase/auth'
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';

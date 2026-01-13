@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+// Fix: Standard modular SDK import for signOut
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useAuth } from '../App';

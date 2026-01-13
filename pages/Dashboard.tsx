@@ -206,13 +206,14 @@ const Dashboard: React.FC = () => {
   );
 };
 
+// Fix: Change subTextText to subText to match usage and destructuring
 const StatCard: React.FC<{ 
   title: string; 
   value: string; 
   icon: React.ReactNode; 
   bgColor: string;
   highlight?: boolean;
-  subTextText?: string;
+  subText?: string;
 }> = ({ title, value, icon, bgColor, highlight, subText }) => (
   <div className={`p-8 rounded-[2rem] border bg-white dark:bg-gray-900 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 ${highlight ? 'border-orange-500 ring-2 ring-orange-100 dark:ring-orange-900/30' : 'border-gray-100 dark:border-gray-800'}`}>
     <div className={`w-14 h-14 rounded-2xl ${bgColor} flex items-center justify-center mb-6 shadow-inner`}>

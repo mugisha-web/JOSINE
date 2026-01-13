@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { onAuthStateChanged, User } from 'firebase/auth';
+// Fix: Use standard modular SDK imports and ensure User is correctly imported from 'firebase/auth'
+import { onAuthStateChanged, type User } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from './firebase';
 import { UserProfile, UserRole } from './types';

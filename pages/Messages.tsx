@@ -104,10 +104,10 @@ const Messages: React.FC = () => {
    */
   const callAI = async (prompt: string) => {
     try {
-      // Always initialize with named parameter apiKey
+      // Fix: Always use process.env.API_KEY directly in the named parameter during initialization
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
-      // Use ai.models.generateContent with model name and prompt directly
+      // Fix: Query GenAI with both the model name and prompt in a single call
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: `User asks: ${prompt}`,
@@ -117,7 +117,7 @@ const Messages: React.FC = () => {
         }
       });
 
-      // Access text output using the .text property (not a method)
+      // Fix: Directly access the .text property (do not call as a method)
       const aiText = response.text;
 
       if (aiText) {

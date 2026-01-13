@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+// Fix: Standard modular SDK import for signInWithEmailAndPassword
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { Store, LogIn, AlertCircle, ShoppingBag, ArrowRight } from 'lucide-react';

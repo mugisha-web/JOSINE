@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { collection, query, getDocs, setDoc, doc, deleteDoc, updateDoc, serverTimestamp, orderBy } from 'firebase/firestore';
+// Fix: Standard modular SDK imports for Auth and App
 import { createUserWithEmailAndPassword, getAuth, signOut } from 'firebase/auth';
 import { initializeApp, deleteApp } from 'firebase/app';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -120,7 +121,7 @@ const Users: React.FC = () => {
         alert("Staff profile updated.");
       } else {
         const secondaryAppName = `SecondaryApp_${Date.now()}`;
-        // Modular initializeApp usage for secondary instance
+        // modular initializeApp usage
         secondaryApp = initializeApp(secondaryFirebaseConfig, secondaryAppName);
         const secondaryAuth = getAuth(secondaryApp);
 
@@ -145,7 +146,7 @@ const Users: React.FC = () => {
         
         await setDoc(doc(db, 'users', newUser.uid), userProfile);
         await signOut(secondaryAuth);
-        // Standard modular deleteApp
+        // modular deleteApp
         await deleteApp(secondaryApp);
         secondaryApp = null;
         
